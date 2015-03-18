@@ -1,0 +1,13 @@
+.DS_Store
+/*.sublime-project
+/*.sublime-workspace
+/.env
+/.idea/
+/doc/codo/
+/lib/
+/newrelic_agent.log
+/node_modules/
+/npm-debug.log
+/tmp/
+/wip/
+/zz-scratch.*

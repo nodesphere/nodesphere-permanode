@@ -1,0 +1,47 @@
+{
+  "name": "nodesphere-permanode",
+  "version": "0.0.1",
+  "description": "Mutable permanodes built on top of Nodesphere",
+  "main": "lib/exports.js",
+  "scripts": {
+    "compile": "./node_modules/.bin/coffee --output lib/ --compile src/",
+    "link": "npm run link-nodesphere",
+    "link-nodesphere": "pushd ../nodesphere && npm prune && npm i && npm link -f && popd && npm link nodesphere && cd ../nodesphere && npm run watch",
+    "link-nodesphere-hm": "npm link -f ../nodesphere && cd ../nodesphere && npm prune && npm i && npm run watch",
+    "prepublish": "npm run compile",
+    "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register",
+    "watch": "./node_modules/.bin/coffee --watch --output lib/ --compile src/"
+  },
+  "author": "Harlan T Wood <code@nodesphere.org> (http://nodesphere.org/)",
+  "contributors": [
+    "Jack Senechal (https://github.com/jacksenechal)"
+  ],
+  "license": "ISC",
+  "engines": {
+    "node": "^0.10.31",
+    "npm": ">=2.5"
+  },
+  "dependencies": {
+    "lightsaber": "^0.4.1",
+    "nodesphere": "0.4.0-dev"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "coffee-script": "~1.8.0",
+    "mocha": "^2.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodesphere/nodesphere-permanode.git"
+  },
+  "keywords": [
+    "permanode",
+    "content-addressable",
+    "mutable",
+    "graph",
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/nodesphere/nodesphere-permanode/issues"
+  }
+}

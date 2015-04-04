@@ -10,6 +10,7 @@
     "link-nodesphere-hm": "npm link -f ../nodesphere && cd ../nodesphere && npm prune && npm i && npm run watch",
     "prepublish": "npm run compile",
     "test": "node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register",
+    "testb": "node_modules/.bin/mocha --bail --recursive --compilers coffee:coffee-script/register ; pwd",
     "watch": "./node_modules/.bin/coffee --watch --output lib/ --compile src/"
   },
   "author": "Harlan T Wood <code@nodesphere.org> (http://nodesphere.org/)",
